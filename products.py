@@ -11,6 +11,7 @@ while True:
     if name == 'q':
         break
     price = input('輸入價格')
+    price = int(price)  #若p 轉成 int 則 下方p[1] str+int 會出錯
     #products.append(name)
     #products.append(price)
     products.append([name,price])
@@ -21,10 +22,13 @@ for p in products:
     #print(p)
     print (p[0],'價格是',p[1])
     
-#寫入檔案
-with open('products.txt','w') as f:
+#寫入檔案 *.txt 可改成 *.csv ',' 是要給EXCEL 區隔
+    
+#with open('products.txt','w') as f:
+with open('products.csv','w') as f:
     for p in products:
-        f.write(p[0] + ',' + p[1] + '\n')
+        
+        f.write(p[0] + ',' + str(p[1]) + '\n') #p[1] 改為str .casting
     
     
     
