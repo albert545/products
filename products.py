@@ -10,7 +10,14 @@ while True:
     name = input('輸入商品名稱:')
     if name == 'q':
         break
-    products.append(name)
+    price = input('輸入價格')
+    #products.append(name)
+    #products.append(price)
+    products.append([name,price])
 print(products)
 
+#印出清單
+for p in products:
+    #print(p)
+    print (p[0],'價格是',p[1])
     
