@@ -4,8 +4,17 @@ Created on Sat Mar  3 13:02:53 2018
 
 @author: albert-w10
 """
-
+#讀取檔案
 products = []
+with open('products.csv','r') as f:
+    for line in f:
+        name,price = line.strip().split(',') #去除\n 切割','  
+        products.append([name,price]) #加入清單
+print(products)
+
+
+
+#products = []
 while True:
     name = input('輸入商品名稱:')
     if name == 'q':
